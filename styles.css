@@ -622,7 +622,7 @@ body { padding: 0; background: #fff; }
 /* ═════════ Partículas flotantes del hero ═════════ */
 .hero { position: relative; overflow: hidden; }
 .hero > :not(.particles) { position: relative; }
-.particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 .particle {
   position: absolute; bottom: -20px; border-radius: 50%; background: var(--primary); opacity: 0;
   box-shadow: 0 0 12px 2px rgba(109, 53, 213, .35);
@@ -633,7 +633,7 @@ body { padding: 0; background: #fff; }
   0% { transform: translate(0, 0) scale(.6); opacity: 0; }
   12% { opacity: .55; }
   85% { opacity: .35; }
-  100% { transform: translate(var(--drift, 0), -640px) scale(1.1); opacity: 0; }
+  100% { transform: translate(var(--drift, 0), -110vh) scale(1.1); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .particles { display: none; } }
 
