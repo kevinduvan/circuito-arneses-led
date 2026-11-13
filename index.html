@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIRCUITO — Arneses reflectivos con luces LED</title>
+  <meta name="description" content="Arneses reflectivos con luces LED. Elige tu color, aprovecha los precios por cantidad y solicita tu cotización por WhatsApp.">
+  <meta name="theme-color" content="#6D35D5">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_SV">
+  <meta property="og:title" content="CIRCUITO — Hazte visible. Muévete seguro.">
+  <meta property="og:description" content="Arneses reflectivos con luces LED. Precios por cantidad y cotización directa por WhatsApp.">
+  <meta property="og:image" content="assets/arnes-rosa.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/arnes-rosa.jpg">
+  <script>document.documentElement.className += " js";</script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" id="skip-link" href="#productos">Saltar a los productos</a>
+
+  <div id="page" class="shell">
+    <p class="demo-bar" id="demo-bar" hidden></p>
+
+    <!-- ───────── Encabezado ───────── -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="#inicio" aria-label="CIRCUITO — inicio">
+          <img class="brand-logo" src="assets/logo-circuito-neon.png" width="800" height="359" alt="CIRCUITO">
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Principal">
+          <a class="nav-link" href="#inicio">Inicio</a>
+          <a class="nav-link" href="#productos">Productos</a>
+          <a class="nav-link" href="#combos">Combos</a>
+          <a class="nav-link" href="#como-funciona">Cómo funciona</a>
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="sel-btn" id="header-selection" aria-haspopup="dialog" aria-controls="seleccion" aria-expanded="false">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+            <span class="sel-btn-label">Mi selección</span>
+            <span class="count-pill" id="header-count" aria-hidden="true">0</span>
+            <span class="sr-only" id="header-count-sr">, vacía</span>
+          </button>
+          <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <!-- ───────── Hero ───────── -->
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="particles" id="hero-particles" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Arneses reflectivos con luces LED</p>
+          <h1 id="hero-title">Hazte visible. <span>Muévete seguro.</span></h1>
+          <p class="hero-sub">Arneses reflectivos con luces LED para acompañarte cuando la visibilidad importa.</p>
+          <p class="lead">Elige tu color, aprovecha nuestros precios por cantidad y solicita tu cotización directamente por WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#productos">Explorar productos
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-outline btn-lg" href="#como-funciona">Cómo funciona</a>
+          </div>
+          <ul class="hero-perks">
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Visibilidad LED</li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12 12 20 4 12V4h8l8 8Z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg>Precios especiales por cantidad</li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l1-3.5A7.5 7.5 0 1 1 9.5 17L5 18Z"/></svg>Cotización por WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-stage">
+            <span class="blob blob-a" aria-hidden="true"></span>
+            <div class="promo-dot" id="hero-promo" hidden>
+              <span id="hero-promo-k"></span>
+              <strong id="hero-promo-v"></strong>
+              <span>por unidad</span>
+            </div>
+            <img class="hero-img" id="hero-img" src="assets/arnes-rosa.jpg" width="347" height="347" alt="Arnés reflectivo rosa con luces LED" fetchpriority="high">
+            <div class="float-card float-price" id="hero-price" hidden>
+              <span class="float-k">Desde</span>
+              <strong class="float-v" id="hero-price-v"></strong>
+              <span class="float-k">por unidad</span>
+            </div>
+            <div class="float-card float-colors" id="hero-colors-card" hidden>
+              <span class="swatches" id="hero-swatches" aria-hidden="true"></span>
+              <span class="float-k" id="hero-colors-text"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────── Productos ───────── -->
+      <section class="section wrap" id="productos" aria-labelledby="catalog-title" tabindex="-1">
+        <div class="section-head split">
+          <div>
+            <h2 id="catalog-title">Nuestros arneses LED</h2>
+            <p class="section-lead" id="catalog-intro">Elige los colores que necesites. Las unidades de todos los colores se suman para calcular tu precio.</p>
+          </div>
+          <a class="link-arrow" href="#product-grid">Ver todos los productos
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="products-layout">
+          <aside class="side-panel side-tiers" id="side-tiers" aria-label="Precios por cantidad"></aside>
+          <ul class="product-grid" id="product-grid"></ul>
+          <aside class="side-panel side-colors" id="side-colors" aria-label="Colores disponibles"></aside>
+        </div>
+      </section>
+
+      <!-- ───────── Combos ───────── -->
+      <section class="section wrap" id="combos" aria-labelledby="combos-title" tabindex="-1">
+        <div class="section-head">
+          <p class="eyebrow">Combos</p>
+          <h2 id="combos-title">Elige tu combo</h2>
+          <p class="section-lead">Mezcla los colores que quieras en cada combo. El precio depende del total de arneses.</p>
+        </div>
+        <ul class="combo-grid" id="combo-grid"></ul>
+        <p class="combo-note" id="combo-note"></p>
+      </section>
+
+      <!-- ───────── Banner ───────── -->
+      <section class="wrap" aria-labelledby="banner-title">
+        <div class="banner">
+          <div class="banner-copy">
+            <h2 id="banner-title">Más unidades, mejor precio.</h2>
+            <p>Arma tu selección y aprovecha nuestros precios especiales por cantidad.</p>
+          </div>
+          <a class="btn btn-light btn-lg" href="#combos">Armar mi combo
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <span class="banner-orb banner-orb-a" aria-hidden="true"></span>
+          <span class="banner-orb banner-orb-b" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <!-- ───────── Beneficios ───────── -->
+      <section class="section wrap" aria-label="Beneficios">
+        <ul class="benefits">
+          <li><span class="ben-ico" style="--bg:var(--pastel-lilac)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><div><h3>Visibilidad reflectiva y LED</h3><p>Franjas reflectantes y luces LED para que te vean.</p></div></li>
+          <li><span class="ben-ico" style="--bg:var(--pastel-mint)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12 12 20 4 12V4h8l8 8Z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg></span><div><h3>Precios especiales por cantidad</h3><p>Cuantos más arneses sumes, menor el precio por unidad.</p></div></li>
+          <li><span class="ben-ico" style="--bg:var(--pastel-pink)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l1-3.5A7.5 7.5 0 1 1 9.5 17L5 18Z"/></svg></span><div><h3>Cotización directa por WhatsApp</h3><p>Envía tu selección y el negocio te responde.</p></div></li>
+        </ul>
+      </section>
+
+      <!-- ───────── Cómo funciona ───────── -->
+      <section class="section wrap" id="como-funciona" aria-labelledby="steps-title" tabindex="-1">
+        <div class="section-head center">
+          <p class="eyebrow">Proceso</p>
+          <h2 id="steps-title">Así de simple</h2>
+        </div>
+        <ol class="steps-grid">
+          <li class="step-card">
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
+            <span class="step-n">Paso 1</span>
+            <h3>Elige tus arneses</h3>
+            <p>Selecciona los colores y cantidades que necesitas.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></span>
+            <span class="step-n">Paso 2</span>
+            <h3>Revisa tu cotización</h3>
+            <p>Consulta los precios y el total calculado automáticamente.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M5 18l1-3.5A7.5 7.5 0 1 1 9.5 17L5 18Z"/><path d="m9 11.5 2 2 4-4"/></svg></span>
+            <span class="step-n">Paso 3</span>
+            <h3>Confirma por WhatsApp</h3>
+            <p>Envía tu selección para confirmar disponibilidad, envío, pago y entrega.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ───────── Mayoreo / contacto ───────── -->
+      <section class="section wrap" id="contacto" aria-labelledby="ws-title" tabindex="-1">
+        <div class="ws-card" id="mayoreo">
+          <div class="ws-copy">
+            <h2 id="ws-title">¿Compras para tu equipo o negocio?</h2>
+            <p id="ws-text"></p>
+          </div>
+          <div class="ws-actions">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-wholesale">Consultar mayoreo por WhatsApp</button>
+            <p class="wa-note" id="ws-note" role="status"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <img class="brand-logo" src="assets/logo-circuito-neon.png" width="800" height="359" alt="CIRCUITO">
+          <p class="small">Arneses reflectivos con luces LED. Catálogo y cotización por WhatsApp; no es una tienda con pago en línea.</p>
+        </div>
+        <nav class="footer-links" aria-label="Pie de página">
+          <a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#combos">Combos</a>
+          <a href="#como-funciona">Cómo funciona</a><a href="#contacto">Contacto</a>
+        </nav>
+        <div class="footer-contact">
+          <a class="btn btn-primary" id="footer-wa" href="#contacto" hidden>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l1-3.5A7.5 7.5 0 1 1 9.5 17L5 18Z"/></svg>Escríbenos por WhatsApp</a>
+          <p class="small">Los importes son estimados y el envío no está incluido. No se piden datos personales; tu selección se conserva solo mientras esta pestaña esté abierta.</p>
+        </div>
+      </div>
+      <p class="wrap copyright small">© CIRCUITO. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- ───────── Panel "Mi selección" ───────── -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="seleccion" role="dialog" aria-modal="true" aria-labelledby="sel-title" tabindex="-1" inert>
+    <div class="drawer-head">
+      <div>
+        <h2 id="sel-title">Mi selección</h2>
+        <p class="summary" id="sel-summary" aria-live="polite">Aún no hay productos.</p>
+      </div>
+      <button type="button" class="icon-btn" id="drawer-close" aria-label="Cerrar mi selección">&times;</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="empty" id="sel-empty">
+        <span class="empty-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
+        <p><strong>Tu selección está vacía.</strong></p>
+        <p>Agrega arneses del catálogo para preparar tu cotización.</p>
+        <button type="button" class="btn btn-outline btn-sm" id="btn-go-catalog">Ver productos</button>
+      </div>
+      <ul class="sel-list" id="sel-list" hidden></ul>
+      <div class="quote" id="sel-quote" hidden>
+        <dl class="quote-rows" id="quote-rows"></dl>
+        <p class="quote-hint" id="quote-hint"></p>
+      </div>
+    </div>
+
+    <div class="drawer-foot" id="sel-actions" hidden>
+      <div class="quote-total" id="quote-total"></div>
+      <p class="quote-ship" id="quote-ship"></p>
+      <button type="button" class="btn btn-primary btn-block btn-lg" id="btn-review">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l1-3.5A7.5 7.5 0 1 1 9.5 17L5 18Z"/></svg>
+        Cotizar por WhatsApp</button>
+      <p class="wa-note" id="wa-note-panel"></p>
+      <div class="clear-row" id="clear-row">
+        <button type="button" class="btn btn-link" id="btn-clear">Vaciar selección</button>
+      </div>
+      <div class="clear-confirm" id="clear-confirm" hidden role="group" aria-label="Confirmar vaciado">
+        <span>¿Quitar todos los productos?</span>
+        <button type="button" class="btn btn-danger btn-sm" id="btn-clear-yes">Sí, vaciar</button>
+        <button type="button" class="btn btn-outline btn-sm" id="btn-clear-no">Cancelar</button>
+      </div>
+      <p class="fineprint">Es una solicitud de cotización, no una compra: el negocio confirmará disponibilidad, envío, pago y entrega por WhatsApp.</p>
+    </div>
+  </aside>
+
+  <!-- Barra flotante (móvil) -->
+  <button type="button" class="float-bar" id="float-bar" hidden>
+    <span class="float-bar-l"><span class="count-pill" id="float-count">0</span> <span>Ver mi selección</span></span>
+    <strong id="float-total"></strong>
+  </button>
+
+  <!-- Aviso breve al agregar -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ───────── Elegir combo ───────── -->
+  <dialog id="combo-dialog" aria-labelledby="combo-dlg-title">
+    <form method="dialog" class="dlg-inner" id="combo-form">
+      <div class="dlg-head">
+        <div>
+          <h2 id="combo-dlg-title">Elige tus colores</h2>
+          <p class="dlg-sub" id="combo-dlg-sub"></p>
+        </div>
+        <button type="button" class="icon-btn" id="combo-close-x" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="slot-list" id="combo-slots"></div>
+      <p class="combo-sum" id="combo-sum" aria-live="polite"></p>
+      <div class="dlg-actions">
+        <button type="button" class="btn btn-primary btn-lg" id="combo-add">Agregar a mi selección</button>
+        <button type="button" class="btn btn-ghost" id="combo-cancel">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ───────── Revisar solicitud ───────── -->
+  <dialog id="request-dialog" aria-labelledby="dlg-title">
+    <form method="dialog" class="dlg-inner" id="dlg-form">
+      <div class="dlg-head">
+        <h2 id="dlg-title">Revisa tu solicitud</h2>
+        <button type="button" class="icon-btn" id="dlg-close-x" aria-label="Cerrar">&times;</button>
+      </div>
+      <p class="dlg-help">Este es el mensaje que se enviará. Puedes copiarlo o abrirlo en WhatsApp; tú decides si lo envías.</p>
+      <label class="sr-only" for="dlg-text">Texto de la solicitud</label>
+      <textarea id="dlg-text" readonly rows="12"></textarea>
+      <p class="dlg-note" id="dlg-note" role="status"></p>
+      <p class="dlg-feedback" id="dlg-feedback" role="status"></p>
+      <div class="dlg-actions">
+        <button type="button" class="btn btn-primary" id="btn-whatsapp">Abrir WhatsApp</button>
+        <button type="button" class="btn btn-outline" id="btn-copy">Copiar solicitud</button>
+        <button type="button" class="btn btn-ghost" id="dlg-close">Cerrar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="products.js"></script>
+  <script src="pricing.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
