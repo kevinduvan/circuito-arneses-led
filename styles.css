@@ -639,3 +639,28 @@ body { padding: 0; background: #fff; }
 
 /* Reserva espacio para imagenes cuadradas con carga diferida (evita saltos de layout) */
 .card-media img, .combo-art img, .sel-thumb img { aspect-ratio: 1 / 1; }
+
+/* ═════════ Promoción: envío gratis por tiempo limitado ═════════ */
+.promo-bar:not([hidden]) {
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  margin: 0; padding: 9px 16px; text-align: center; font-size: .9rem; font-weight: 600; color: #fff;
+  background: linear-gradient(100deg, var(--primary-dark), var(--primary) 45%, var(--logo-red));
+  background-size: 200% 100%; animation: promo-shift 8s ease-in-out infinite alternate;
+}
+.promo-bar-badge {
+  background: #fff; color: var(--logo-red); font-weight: 800; font-size: .72rem; letter-spacing: .08em;
+  padding: 3px 10px; border-radius: 999px; animation: promo-pulse 2.2s ease-in-out infinite;
+}
+.promo-chip:not([hidden]) {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px; padding: 7px 14px;
+  background: #fff; color: var(--logo-red); border: 1.5px dashed var(--logo-red); border-radius: 999px;
+  font-weight: 800; font-size: .85rem; letter-spacing: .01em; box-shadow: 0 6px 18px rgba(240, 40, 30, .18);
+}
+.promo-chip .ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+#quote-ship.is-promo {
+  background: #FFF1F0; color: var(--logo-red); border: 1.5px dashed var(--logo-red); border-radius: 12px;
+  padding: 10px 12px; font-weight: 700;
+}
+@keyframes promo-shift { from { background-position: 0% 0; } to { background-position: 100% 0; } }
+@keyframes promo-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .promo-bar, .promo-bar-badge { animation: none; } }

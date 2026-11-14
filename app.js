@@ -72,7 +72,7 @@
    *   brand: nombre del negocio para el saludo (por defecto "CIRCUITO")
    * Solo incluye importes que existen: nunca imprime valores vacíos ni inventados.
    */
-  function buildQuoteMessage(q, lines, fmt, brand) {
+  function buildQuoteMessage(q, lines, fmt, brand, promoLine) {
     var out = ["Hola, quiero solicitar una cotización de arneses reflectivos LED de " + (brand || "CIRCUITO") + ".", "", "Mi selección:"];
     lines.forEach(function (l) { out.push("- Color: " + (l.color || l.name) + " — Cantidad: " + l.qty); });
     out.push("", "Total de unidades: " + q.units);
@@ -96,6 +96,7 @@
       if (q.subtotalCents !== null && q.savingsCents > 0) out.push("Ahorro: " + fmt(q.savingsCents));
     }
 
+    if (promoLine) out.push("", promoLine);
     out.push("", "Quisiera confirmar disponibilidad y opciones de entrega.",
       "(Esto es una solicitud de cotización, no un pedido confirmado.)", "", "Gracias.");
     return out.join("\n");
@@ -216,7 +217,35 @@
   }
 
   // ── Identidad desde config.js ──
+  // Promoción activa: enabled y, si hay fecha límite "AAAA-MM-DD", que no haya pasado (hora local).
+  function activePromo() {
+    var p = CFG.promo;
+    if (!p || !p.enabled) return null;
+    if (p.until) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(p.until));
+      if (m) {
+        var end = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 23, 59, 59);
+        if (Date.now() > end.getTime()) return null;
+      }
+    }
+    return p;
+  }
+
+  function applyPromo() {
+    var p = activePromo();
+    if (!p) return;
+    var bar = $("promo-bar");
+    $("promo-bar-badge").textContent = p.badge || "PROMOCIÓN";
+    $("promo-bar-text").textContent = p.barText || p.title || "";
+    bar.hidden = false;
+    var chip = $("hero-promo-chip");
+    $("hero-promo-chip-text").textContent = p.title || "";
+    chip.hidden = false;
+    if (p.footNote) $("foot-note").textContent = p.footNote + " No se piden datos personales; tu selección se conserva solo mientras esta pestaña esté abierta.";
+  }
+
   function applyConfig() {
+    applyPromo();
     if (CFG.demoMode) {
       var demo = $("demo-bar");
       demo.textContent = CFG.demoNotice || "Sitio de demostración.";
@@ -763,7 +792,10 @@
     }
     total.appendChild(label); total.appendChild(val);
     if (prev && prev !== total.textContent) pulse(val, "is-bump");
-    $("quote-ship").textContent = CFG.shippingNote || "";
+    var promo = activePromo();
+    var ship = $("quote-ship");
+    ship.textContent = (promo && promo.shippingNote) || CFG.shippingNote || "";
+    ship.classList.toggle("is-promo", !!promo);
   }
 
   // Cambio de cantidad: no reconstruye la lista para no perder el foco.
@@ -889,7 +921,8 @@
   function currentMessage() {
     var q = currentQuote();
     var lines = list.map(function (i) { var p = byId[i.id]; return { name: p.name, color: colorName(p), qty: i.qty }; });
-    return buildQuoteMessage(q, lines, money, String(CFG.businessName || "CIRCUITO").toUpperCase());
+    var promo = activePromo();
+    return buildQuoteMessage(q, lines, money, String(CFG.businessName || "CIRCUITO").toUpperCase(), promo && promo.messageLine);
   }
   function openDialog(opener) {
     if (!list.length) return;

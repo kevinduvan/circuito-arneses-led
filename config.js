@@ -50,6 +50,20 @@ window.CATALOG_CONFIG = {
   },
   shippingNote: "Envío por confirmar: el costo de envío no está incluido.",
 
+  // ── Promoción: envío gratis por tiempo limitado ──────────────
+  // enabled: false la apaga. until: fecha límite "AAAA-MM-DD" (inclusive); si ya pasó, se oculta sola.
+  // Déjala en "" si todavía no tienes fecha de cierre.
+  promo: {
+    enabled: true,
+    until: "",
+    badge: "PROMOCIÓN",
+    title: "Envío GRATIS por tiempo limitado",
+    barText: "Envío GRATIS en todos tus pedidos. ¡Aprovecha esta promoción por tiempo limitado!",
+    shippingNote: "🎁 Promoción: envío GRATIS por tiempo limitado.",
+    footNote: "Los importes son estimados. Promoción de envío gratis por tiempo limitado.",
+    messageLine: "Quiero aprovechar la promoción de envío gratis por tiempo limitado."
+  },
+
   // ── Mayoreo ──────────────────────────────────────────────────
   wholesaleTitle: "¿Compras para tu equipo o negocio?",
   wholesaleButton: "Consultar mayoreo por WhatsApp",
