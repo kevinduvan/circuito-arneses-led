@@ -1,8 +1,8 @@
 /*
  * products.js — Productos del catálogo (máximo recomendado: 10).
  * Campos: id (único, sin espacios), ref, name, short (nombre del color), swatch (color de muestra #RRGGBB, solo visual), category, description, image, alt.
- * Dato confirmado por el negocio: los arnés tienen luces LED. Otras características
- * (materiales, batería, tallas) no se han confirmado: no las agregues sin validarlas.
+ * Datos confirmados por el negocio: los arneses son ajustables y tienen luces LED. Otras
+ * características (materiales, batería, tallas, cierres) no se han confirmado: no las agregues sin validarlas.
  */
 window.CATALOG_PRODUCTS = [
   {
@@ -12,7 +12,7 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-001",
     name: "Arnés reflectivo rojo",
     category: "Arnés reflectivos",
-    description: "Arnés rojo con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
+    description: "Arnés rojo ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
     image: "assets/arnes-rojo.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color rojo con franjas plateadas"
@@ -24,7 +24,7 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-002",
     name: "Arnés reflectivo naranja",
     category: "Arnés reflectivos",
-    description: "Arnés naranja con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
+    description: "Arnés naranja ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
     image: "assets/arnes-naranja.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color naranja con franjas plateadas"
@@ -36,7 +36,7 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-003",
     name: "Arnés reflectivo rosa",
     category: "Arnés reflectivos",
-    description: "Arnés rosa con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
+    description: "Arnés rosa ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
     image: "assets/arnes-rosa.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color rosa con franjas plateadas"
@@ -48,7 +48,7 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-004",
     name: "Arnés reflectivo azul",
     category: "Arnés reflectivos",
-    description: "Arnés azul con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
+    description: "Arnés azul ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
     image: "assets/arnes-azul.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color azul con franjas plateadas"
@@ -60,7 +60,7 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-005",
     name: "Arnés reflectivo negro",
     category: "Arnés reflectivos",
-    description: "Arnés negro con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
+    description: "Arnés negro ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
     image: "assets/arnes-negro.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color negro con franjas plateadas"
@@ -72,8 +72,8 @@ window.CATALOG_PRODUCTS = [
     ref: "CI-006",
     name: "Arnés reflectivo celeste",
     category: "Arnés reflectivos",
-    description: "Arnés celeste con luces LED y franjas reflectantes para mayor visibilidad, correas ajustables y cierres de hebilla.",
-    image: "assets/arnes-celeste.png",
+    description: "Arnés celeste ajustable con luces LED y franjas reflectantes para mayor visibilidad.",
+    image: "assets/arnes-celeste.jpg",
     priceGroup: "arnes",
     alt: "Arnés reflectivo de color celeste con franjas plateadas"
   }

@@ -1,0 +1,19 @@
+# CIRCUITO
+
+> Negocio en línea de Chalatenango, El Salvador, que vende arneses reflectivos ajustables con luces LED en seis colores y envía a todo El Salvador. No tiene tienda física ni pago en línea: los pedidos se cotizan y confirman por WhatsApp.
+
+## Datos del negocio
+- Contacto: WhatsApp +503 6172 4199, de lunes a sábado, de 8:00 a. m. a 6:00 p. m.
+- Facebook: https://www.facebook.com/profile.php?id=61572471610186
+- Sitio: https://kevinduvan.github.io/circuito-arneses-led/
+
+## Productos y precios (USD)
+- Colores: rojo, naranja, rosa, azul, negro y celeste.
+- 1 unidad: $20.00 c/u; 2 unidades: $19.00 c/u; 3 a 4 unidades: $18.00 c/u.
+- 5 a 9 unidades: cotización personalizada.
+- Mayoreo: 10 a 15 unidades a $16.00 c/u; 16 o más a $15.00 c/u.
+- Las unidades de todos los colores se suman para calcular el precio.
+- Envíos a todo El Salvador; el costo, las condiciones y la disponibilidad se confirman por WhatsApp.
+
+## Páginas
+- [Inicio, catálogo y preguntas frecuentes](https://kevinduvan.github.io/circuito-arneses-led/): una sola página con catálogo, combos y preguntas frecuentes.

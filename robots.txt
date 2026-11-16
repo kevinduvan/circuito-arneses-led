@@ -1,0 +1,8 @@
+# Nota: los rastreadores solo leen robots.txt en la raíz del dominio. Este sitio vive en
+# /circuito-arneses-led/, así que este archivo sirve como referencia y como base si se
+# publica en un dominio propio o en la raíz (usuario.github.io). Mientras tanto, el
+# sitemap se envía directamente en Google Search Console y Bing Webmaster Tools.
+User-agent: *
+Allow: /
+
+Sitemap: https://kevinduvan.github.io/circuito-arneses-led/sitemap.xml

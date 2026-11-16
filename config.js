@@ -50,18 +50,23 @@ window.CATALOG_CONFIG = {
   },
   shippingNote: "Envío por confirmar: el costo de envío no está incluido.",
 
+  // ── Medición (opcional) ──────────────────────────────────────
+  // Pon aquí tu ID de Google Analytics 4 ("G-XXXXXXXXXX") para activar la medición de clics
+  // en WhatsApp y Facebook. Vacío = no se carga nada y no se envía ningún dato.
+  analytics: { ga4Id: "" },
+
   // ── Promoción: envío gratis por tiempo limitado ──────────────
-  // enabled: false la apaga. until: fecha límite "AAAA-MM-DD" (inclusive); si ya pasó, se oculta sola.
-  // Déjala en "" si todavía no tienes fecha de cierre.
+  // Activa hasta agotar existencias: cuando se acaben, pon enabled: false y vuelve a publicar el sitio.
+  // until: fecha límite opcional "AAAA-MM-DD" (inclusive); si ya pasó, se oculta sola. Vacío = sin fecha.
   promo: {
     enabled: true,
     until: "",
     badge: "PROMOCIÓN",
-    title: "Envío GRATIS por tiempo limitado",
-    barText: "Envío GRATIS en todos tus pedidos. ¡Aprovecha esta promoción por tiempo limitado!",
-    shippingNote: "🎁 Promoción: envío GRATIS por tiempo limitado.",
-    footNote: "Los importes son estimados. Promoción de envío gratis por tiempo limitado.",
-    messageLine: "Quiero aprovechar la promoción de envío gratis por tiempo limitado."
+    title: "Envío GRATIS hasta agotar existencias",
+    barText: "Envío GRATIS a todo El Salvador hasta agotar existencias. ¡Aprovecha esta promoción!",
+    shippingNote: "🎁 Promoción: envío GRATIS a todo El Salvador hasta agotar existencias.",
+    footNote: "Los importes son estimados. Promoción de envío gratis a todo El Salvador hasta agotar existencias.",
+    messageLine: "Quiero aprovechar la promoción de envío gratis hasta agotar existencias."
   },
 
   // ── Mayoreo ──────────────────────────────────────────────────

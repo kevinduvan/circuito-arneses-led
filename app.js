@@ -244,6 +244,33 @@
     if (p.footNote) $("foot-note").textContent = p.footNote + " No se piden datos personales; tu selección se conserva solo mientras esta pestaña esté abierta.";
   }
 
+  // ── Medición (GA4, opcional) ──
+  // Solo se activa si config.js trae analytics.ga4Id con formato "G-XXXXXXXXXX". Sin ID no carga nada.
+  // Los eventos "click_*" miden clics en botones: NO son ventas ni conversiones completadas
+  // (la venta se cierra en WhatsApp, fuera del sitio). Nunca se envía el texto del mensaje.
+  function track(name, params) {
+    try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) { /* sin medición */ }
+  }
+
+  function initAnalytics() {
+    var id = CFG.analytics && CFG.analytics.ga4Id;
+    if (!/^G-[A-Z0-9]{6,12}$/.test(id || "")) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id);
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a) return;
+      if (/facebook\.com/.test(a.href)) track("click_facebook", { link_location: "pie" });
+      else if (/wa\.me/.test(a.href)) track("click_whatsapp", { link_location: "pie" });
+    });
+  }
+
   function applyConfig() {
     applyPromo();
     if (CFG.demoMode) {
@@ -955,6 +982,7 @@
     if (!wa.valid || !list.length) return;
     // Con "noopener" window.open siempre devuelve null: no sirve para saber si se abrió.
     window.open(buildWhatsAppUrl(wa.number, $("dlg-text").value), "_blank", "noopener");
+    track("click_whatsapp", { link_location: "cotizacion", units: list.reduce(function (n, it) { return n + (it.qty || 0); }, 0) });
     $("dlg-feedback").textContent = "Abriendo WhatsApp con tu mensaje. Si no se abre, permite ventanas emergentes o copia la solicitud.";
   });
 
@@ -978,6 +1006,7 @@
   $("btn-wholesale").addEventListener("click", function () {
     if (!wa.valid) return;
     window.open(buildWhatsAppUrl(wa.number, CFG.wholesaleMessage || ""), "_blank", "noopener");
+    track("click_whatsapp", { link_location: "mayoreo" });
     $("ws-note").textContent = "Abriendo WhatsApp con tu consulta. Si no se abre, permite ventanas emergentes e inténtalo de nuevo.";
   });
 
@@ -1018,6 +1047,7 @@
 
   // ── Inicio ──
   initParticles();
+  initAnalytics();
   applyConfig();
   renderHero();
   renderCatalog();
